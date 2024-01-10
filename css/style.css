@@ -14,15 +14,10 @@ img {
     display: block;
 }
 
-/* *header */
-header {
-    height: 80px;
-}
-
 /* * main */
 main {
     background-color: #7FFFD4;
-    height: calc(100vh - 140px);
+    padding: 5rem 0 5rem;
 }
 
 .grid {
@@ -34,14 +29,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: 1px solid black;
     width: calc(100% / 10);
     height: calc(100% / 10);
     font-size: large;
+    cursor: pointer;
 }
 
-/* * footer */
-footer {
-    height: 60px;
+.clicked {
+    background-color: blue;
+    color: white;
 }
