@@ -14,12 +14,28 @@ img {
     display: block;
 }
 
+/* * header */
+/* form */
+form {
+    width: 20%;
+}
+
+form select {
+    height: 28px;
+    width: 95px;
+}
+
+form button {
+    width: 95px;
+}
+
 /* * main */
 main {
     background-color: #7FFFD4;
     padding: 5rem 0 5rem;
 }
 
+/* grid & cells */
 .grid {
     width: 600px;
     height: 600px;

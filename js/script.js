@@ -1,6 +1,7 @@
 // Recupero gli elementi HTML
 const grid = document.getElementById("grid");
 const playButton = document.querySelector("button");
+const form = document.querySelector("form");
 
 // Determino la quantità di celle da inserire
 const cellsRow = 10;
@@ -8,8 +9,11 @@ const cellsColumn = 10;
 const cellsTotal = cellsRow * cellsColumn;
 
 // event listener al click del pulsante play
-playButton.addEventListener("click", function() {
+form.addEventListener("submit", function(event) {
+    // ! impedisco che si ricarichi la pagina
+    event.preventDefault();
 
+    // cestino vecchia griglia in caso ci sia
     while (grid.hasChildNodes()) {
         grid.removeChild(grid.firstChild)
     };
