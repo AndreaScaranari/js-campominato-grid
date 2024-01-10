@@ -14,6 +14,7 @@ playButton.addEventListener("click", function() {
 for (let i = 1; i <= cellsTotal; i++) {
     const newCell = document.createElement("div");
     newCell.classList.add("cell");
+    newCell.innerText = i;
     grid.appendChild(newCell);
 }
 });
