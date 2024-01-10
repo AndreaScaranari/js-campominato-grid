@@ -41,15 +41,28 @@ main {
     height: 600px;
 }
 
-.cell {
+[class*="cell"] {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     font-size: large;
     cursor: pointer;
+}
+
+.cell-big {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.cell-medium {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.cell-small {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .clicked {

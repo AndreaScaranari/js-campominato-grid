@@ -1,27 +1,58 @@
-// Recupero gli elementi HTML
+// recupero gli elementi HTML
 const grid = document.getElementById("grid");
 const playButton = document.querySelector("button");
 const form = document.querySelector("form");
 
-// Determino la quantità di celle da inserire
-const cellsRow = 10;
-const cellsColumn = 10;
-const cellsTotal = cellsRow * cellsColumn;
+// dichiaro le variabili relative alla quantità di celle da inserire
+let cellsRow;
+let cellsColumn;
+let cellsTotal;
 
 // event listener al click del pulsante play
 form.addEventListener("submit", function(event) {
     // ! impedisco che si ricarichi la pagina
     event.preventDefault();
-
+    
     // cestino vecchia griglia in caso ci sia
     while (grid.hasChildNodes()) {
         grid.removeChild(grid.firstChild)
     };
 
+    // prendo il valore della select
+    const selectValue = document.querySelector("select").value;
+    console.log(selectValue);
+
+    switch (selectValue) {
+        case "big":
+            cellsRow = 10;
+            cellsColumn = cellsRow;
+            break;
+        case "medium":
+            cellsRow = 9;
+            cellsColumn = cellsRow;
+            break;
+        case "small":
+            cellsRow = 7;
+            cellsColumn = cellsRow;
+    }
+
+    // calcolo quantità di celle da inserire
+    cellsTotal = cellsRow * cellsColumn;
+
 // Genero le celle
 for (let i = 1; i <= cellsTotal; i++) {
     const newCell = document.createElement("div");
-    newCell.classList.add("cell");
+    // aggiungo classe a seconda delle dimensioni
+    switch (selectValue) {
+        case "big":
+            newCell.classList.add("cell-big");
+            break;
+        case "medium":
+            newCell.classList.add("cell-medium");
+            break;
+        case "small":
+            newCell.classList.add("cell-small");
+    }
     // inserisco il numero
     newCell.innerText = i;
     // stampo in pagina
@@ -32,9 +63,5 @@ for (let i = 1; i <= cellsTotal; i++) {
         newCell.classList.toggle("clicked");
         console.log(i);
     });
-
 }
 });
-
-
-
