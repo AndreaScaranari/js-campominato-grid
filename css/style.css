@@ -13,3 +13,31 @@ img {
     max-width: 100%;
     display: block;
 }
+
+/* *header */
+header {
+    height: 80px;
+}
+
+/* * main */
+main {
+    background-color: #7FFFD4;
+    height: calc(100vh - 140px);
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+}
+
+.cell {
+    border: 1px solid black;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    font-size: large;
+}
+
+/* * footer */
+footer {
+    height: 60px;
+}
